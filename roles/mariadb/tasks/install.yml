@@ -1,0 +1,63 @@
+---
+- name: Preemptively Answer | PHP APM | newrelic.appname
+  debconf:
+    name: mariadb-server-10.1
+    question: "{{ item }}"
+    vtype: password
+    value: "{{ database_password | mandatory }}"
+  with_items:
+    - mariadb-server/root_password
+    - mariadb-server/root_password_again
+  when: mariadb_server
+
+- name: Install Packages | apt
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items:
+    - mariadb-server
+    - python-mysqldb
+  when: mariadb_server
+
+- name: Install Packages | apt
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items: "{{ mariadb_modules }}"
+  tags:
+    - software-installation
+    - using-apt
+
+- name: Create Database
+  mysql_db:
+    state: present
+    name: "{{ database_name | default(project) }}"
+  when: mariadb_server
+
+- name: Create Database User
+  mysql_user:
+    state: present
+    name: "{{ database_username | default(project) }}"
+    password: "{{ database_password | mandatory }}"
+    priv: "mysql.*:ALL/{{ project}}.*:ALL"
+    host: "%"
+  when: mariadb_server
+
+- name: Install Packages | apt
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items:
+    - mariadb-client
+  when: mariadb_client
+
+- name: Install Packages | apt
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items:
+    - p7zip-full
+  when: mariadb_backup_enabled
+  tags:
+    - p7zip
+    - backup

@@ -1,0 +1,14 @@
+---
+# handlers file for WHAT ?
+- name: Restart service
+  service:
+    name: "{{ service_NAME }}"
+    state: restarted
+    enabled: true
+
+- name: Restart service
+  service:
+    name: name_service_?
+    state: restarted
+    enabled: true
+...

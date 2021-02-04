@@ -1,0 +1,7 @@
+[local]
+localhost
+
+[local:vars]
+project=geds
+environment_tier=geds
+database_password=geds
