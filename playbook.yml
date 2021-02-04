@@ -1,0 +1,22 @@
+---
+- hosts: all
+  roles:
+    - common
+
+- hosts: webserver
+  vars_files:
+      - vars/mail.yml
+  roles:
+    - apache
+    - mariadb
+
+- hosts: database
+  vars_files:
+      - vars/mail.yml
+  roles:
+    - mariadb
+    - phpmyadmin
+
+- hosts: server
+  roles:
+    - docker

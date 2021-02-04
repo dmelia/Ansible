@@ -1,0 +1,1 @@
+Some of its scripts have been edited from Windows, you might encounter errors when executing them, in this case install the dos2unix package, and run the dosn2unix command filename, it will be converted to unix format.
