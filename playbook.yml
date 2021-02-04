@@ -12,7 +12,7 @@
 
 - hosts: database
   vars_files:
-      - vars/mail.yml
+  
   roles:
     - mariadb
     - phpmyadmin
