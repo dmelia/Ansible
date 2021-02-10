@@ -1,1 +1,21 @@
 
+---
+- hosts: all
+  roles:
+  - git
+  - curl
+  - wget
+  - tree
+  - dnsutils
+  
+  - hosts: web-01
+  roles:
+  - lamp
+  
+  - hosts: webserver
+  roles:
+  - docker
+  
+  - hosts: database
+  roles:
+  - mariadb-server
