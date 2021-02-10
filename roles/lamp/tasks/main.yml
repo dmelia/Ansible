@@ -6,7 +6,16 @@
     name:
       - apache2
       - php
+      - php-cli
       - php-mysql
+      - php-curl
+      - php-gd
+      - php-intl
+      - php-memcache
+      - php xm
+      - php-zip
+      - php-mbstring
+      - php-json
     state: present
     update_cache: yes
 
@@ -16,20 +25,10 @@
     state: directory
     mode: '0755'
 
-- name: remove default index.html
-  file:
-    path: /var/www/html/index.html
-    state: absent
-
 - name: upload web app source
   copy:
-    src: app/
+    src: skeletonigest01.tar.gz
     dest: /var/www/html/
- 
-- name: deploy php database config
-  template:
-    src: "db-config.php.j2"
-    dest: "/var/www/html/db-config.php"
   
 - name: ensure apache service is start
     service:
@@ -47,17 +46,10 @@
       - python-mysqldb # for mysql_db and mysql_user modules
     state: present
     update_cache: yes
+ 
+ - name: ensure apache service is start
+    service:
+      name: mariadb
+      state: started
+      enabled: yes
 
-- name: Allow external MySQL connexions (1/2)
-  lineinfile:
-    path: /etc/mysql/mysql.conf.d/mysqld.cnf
-    regexp: '^skip-external-locking'
-    line: "# skip-external-locking"
-  notify: Restart mysql
-
-- name: Allow external MySQL connexions (2/2)
-  lineinfile:
-    path: /etc/mysql/mysql.conf.d/mysqld.cnf
-    regexp: '^bind-address'
-    line: "# bind-address"
-  notify: Restart mariadb
