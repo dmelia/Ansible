@@ -2,7 +2,7 @@
 # WEB SERVER
 
 - name: install apache and php last version
-  apt:
+  apt: pkg={{ item }} state=latest
     name:
       - apache2
       - php
@@ -40,7 +40,7 @@
 # DATABASE SERVER
 
 - name: install mariadb-server
-  apt:
+  apt: pkg={{ item }} state=latest
     name: 
       - mariadb-server
       - python-mysqldb # for mysql_db and mysql_user modules
