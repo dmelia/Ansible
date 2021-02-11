@@ -99,4 +99,4 @@
   community.mysql.mysql_db:
     name: my_db
     state: import
-    target: /tmp/dump.sql.bz2
+    target: "/roles/lamp/file/dump.sql.bz2"
