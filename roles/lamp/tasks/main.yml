@@ -54,6 +54,7 @@
     name: 
       - mariadb-server
       - mariadb-client
+      - mariadb-common
       - python-mysqldb # for mysql_db and mysql_user modules
     state: present
     update_cache: yes
@@ -83,5 +84,19 @@
   mysql_db:
     name: test
     state: absent
-    login_user: "{{ mysql_root_user }}"
+    login_user: root
     login_password: "{{ mysql_root_password }}"
+
+- name: Create igest01_skeleton database
+  mysql_db:
+    name: igest01_skeleton
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+    login_host: localhost
+    state: present
+
+- name: Restore database
+  community.mysql.mysql_db:
+    name: my_db
+    state: import
+    target: /tmp/dump.sql.bz2
