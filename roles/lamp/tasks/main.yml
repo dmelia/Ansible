@@ -2,22 +2,32 @@
 # WEB SERVER
 
 - name: install apache and php last version
-  apt: pkg={{ item }} state=latest
+  apt:
     name:
       - apache2
-      - php
-      - php-cli
-      - php-mysql
-      - php-curl
-      - php-gd
-      - php-intl
-      - php-memcache
-      - php-xml
-      - php-zip
-      - php-mbstring
-      - php-json
+      - libapache2-mod-php7.4
+      - php7.4-common
+      - php7.4
+      - php7.4-cli
+      - php7.4-mysql
+      - php7.4-curl
+      - php7.4-gd
+      - php7.4-intl
+      - php7.4-memcache
+      - php7.4-xml
+      - php7.4-zip
+      - php7.4-mbstring
+      - php7.4-json
     state: present
     update_cache: yes
+
+- name: Disable the Apache PHP module
+  command: a2dismod php*
+    state: absent
+ 
+ - name: Disable the Apache PHP module
+  command: a2enmod php7.4
+    state: absent
 
 - name: Give writable mode to http folder
   file:
@@ -52,4 +62,3 @@
       name: mariadb
       state: started
       enabled: yes
-
