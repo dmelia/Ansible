@@ -53,6 +53,7 @@
   apt: pkg={{ item }} state=latest
     name: 
       - mariadb-server
+      - mariadb-client
       - python-mysqldb # for mysql_db and mysql_user modules
     state: present
     update_cache: yes
@@ -62,6 +63,7 @@
       name: mariadb
       state: started
       enabled: yes
+   with_items:
  
  - name: Sets the root password
   mysql_user:
