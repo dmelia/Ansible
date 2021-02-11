@@ -1,9 +1,0 @@
----
-# defaults file for WHAT ?
-debian:
-    version: buster
-mariadb:
-    gpg_key_id: 
-    series_version: ''
-    mirror: ftp.exemple.com/pub
-...
