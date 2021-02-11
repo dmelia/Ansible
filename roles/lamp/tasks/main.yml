@@ -12,7 +12,7 @@
       - php-gd
       - php-intl
       - php-memcache
-      - php xm
+      - php-xml
       - php-zip
       - php-mbstring
       - php-json
@@ -27,7 +27,7 @@
 
 - name: upload web app source
   copy:
-    src: skeletonigest01.tar.gz
+    src: '/role/lamp/files/skeletonigest01.tar.gz'
     dest: /var/www/html/
   
 - name: ensure apache service is start
