@@ -1,3 +1,6 @@
+ ----------------------------------------------------------------------------------------------
+ # Basic tutorial
+  ----------------------------------------------------------------------------------------------
 Installing Ansible 2.6 on Ubuntu Bionic Beaver
 
 1 . Connect to your server using SSH:
@@ -138,7 +141,8 @@ Using Ansible Commands:
  Additionally, you can configure the default path where Ansible roles will be downloaded by editing your ansible.cfg configuration file
  (normally located in /etc/ansible/ansible.cfg and setting a roles_path in the [defaults] section.
  
- 
+  ----------------------------------------------------------------------------------------------
+ # Scripts
  ----------------------------------------------------------------------------------------------
  
  * __builds_the_role_tree.sh__
