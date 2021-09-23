@@ -145,7 +145,7 @@ Using Ansible Commands:
  # Tools
  ----------------------------------------------------------------------------------------------
 
- Atom Text Editor is a cross-platform free text editor developed in NodeJS by GitHub. The first version was released in April 2014 but it already has a huge plugin library1). It is based on Chromium and is extremely customizable. It can also be used as an idea.
+ __Atom__ Text Editor is a cross-platform free text editor developed in NodeJS by GitHub. The first version was released in April 2014 but it already has a huge plugin library1). It is based on Chromium and is extremely customizable. It can also be used as an idea.
 
 Atom supports most programming languages, including Python, Javascript, Bash, Ruby, Perl, C, C ++, Java, and many more.
 
@@ -155,6 +155,12 @@ __!__NEED A GUI INTERFACE__!__
                                         Install: sudo dpkg -i atom-amd64.deb
                            or
                            install from package (depends on the distribution):  sudo apt-get install atom
+                           
+ 
+ __Terminal NANO__ Text Editor
+                            Download the: yaml.nanorc or create with nano (copy/paste) inside the directory: /usr/share/nano/
+                            
+                            "Allows" GNU nano terminal based text editor to support syntax, highlighting YAML files                        
  
   ----------------------------------------------------------------------------------------------
  # Scripts
