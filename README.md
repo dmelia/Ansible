@@ -149,10 +149,10 @@ Using Ansible Commands:
 
 Atom supports most programming languages, including Python, Javascript, Bash, Ruby, Perl, C, C ++, Java, and many more.
 
-                           Download ATOM Editor https://github.com/atom/atom/releases
+                           Download ATOM Editor: https://github.com/atom/atom/releases
                            or
-                           sudo dpkg -i atom-amd64.deb
-                           install  sudo apt-get install atom   
+                           install:  sudo apt-get install atom
+                                     sudo dpkg -i atom-amd64.deb
   ----------------------------------------------------------------------------------------------
  # Scripts
  ----------------------------------------------------------------------------------------------
