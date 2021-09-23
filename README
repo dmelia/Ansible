@@ -141,5 +141,9 @@ Using Ansible Commands:
  
  ----------------------------------------------------------------------------------------------
  
- * ___build___
+ * ___builds_the_role_tree.sh___
  built the role tree and created the default YAML files - but blank :)
+ 
+  ----------------------------------------------------------------------------------------------
+  
+  * ___vault_generator.sh___
