@@ -127,12 +127,12 @@ Using Ansible Commands:
                                                 ansible -m ping all
                                                 
                         specify a group:
-                                                 ansible -m ping servers
+                                                ansible -m ping servers
                                                  
-                         specify an individual host:
-                                                    ansible -m ping host1
+                        specify an individual host:
+                                                ansible -m ping host1
                          
-                         ansible-playbook:
+                        ansible-playbook:
                                           [role name].yml --ask-sudo-pass
  
  Additionally, you can configure the default path where Ansible roles will be downloaded by editing your ansible.cfg configuration file
