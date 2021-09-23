@@ -148,6 +148,9 @@ Using Ansible Commands:
  * __builds_the_role_tree.sh__
  
     built the role tree and created the default YAML files - but blank :)
+    
+    ![image](https://user-images.githubusercontent.com/28867314/134551387-4e1f92ae-6104-4309-9a6d-81c4e2623570.png)
+
  
   ----------------------------------------------------------------------------------------------
   
