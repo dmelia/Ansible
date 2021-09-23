@@ -141,6 +141,18 @@ Using Ansible Commands:
  Additionally, you can configure the default path where Ansible roles will be downloaded by editing your ansible.cfg configuration file
  (normally located in /etc/ansible/ansible.cfg and setting a roles_path in the [defaults] section.
  
+ ----------------------------------------------------------------------------------------------
+ # Tools
+ ----------------------------------------------------------------------------------------------
+
+ Atom Text Editor is a cross-platform free text editor developed in NodeJS by GitHub. The first version was released in April 2014 but it already has a huge plugin library1). It is based on Chromium and is extremely customizable. It can also be used as an idea.
+
+Atom supports most programming languages, including Python, Javascript, Bash, Ruby, Perl, C, C ++, Java, and many more.
+
+                           Download ATOM Editor https://github.com/atom/atom/releases
+                           or
+                           sudo dpkg -i atom-amd64.deb
+                           install  sudo apt-get install atom   
   ----------------------------------------------------------------------------------------------
  # Scripts
  ----------------------------------------------------------------------------------------------
