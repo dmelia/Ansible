@@ -141,9 +141,13 @@ Using Ansible Commands:
  
  ----------------------------------------------------------------------------------------------
  
- * ___builds_the_role_tree.sh___
- built the role tree and created the default YAML files - but blank :)
+ * __builds_the_role_tree.sh__
+ 
+    built the role tree and created the default YAML files - but blank :)
  
   ----------------------------------------------------------------------------------------------
   
-  * ___vault_generator.sh___
+  * __vault_generator.sh__
+  
+    Allows you to generate a file containing the user login and password, in order to call them in a variable
+  
