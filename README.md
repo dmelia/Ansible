@@ -160,7 +160,10 @@ __!__NEED A GUI INTERFACE__!__
  __Terminal NANO__ Text Editor
                             Download the: yaml.nanorc or create with nano (copy/paste) inside the directory: /usr/share/nano/
                             
-                            "Allows" GNU nano terminal based text editor to support syntax, highlighting YAML files                        
+                            "Allows" GNU nano terminal based text editor to support syntax, highlighting YAML files
+                            
+                            ![image](https://user-images.githubusercontent.com/28867314/134562058-ea2db230-0148-4618-8f6d-5f1254512935.png)
+
  
   ----------------------------------------------------------------------------------------------
  # Scripts
