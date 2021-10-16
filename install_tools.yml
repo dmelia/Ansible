@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: true # = sudo
+  become_user: user_name # replace username = sudo -u user_name, if you user root remove become.
+  tasks:
+     - name: Install apache httpd  (state=present is optional)
+       apt:
+         name: apache2
+         state: present
+     
+     - name: Update repositories cache and install "foo" package
+       apt:
+         name: foo
+         update_cache: yes
+         
+     - name: Install some package "utility"
+       apt:
+        name: utility
+
+     - name: Install a list of packages
+       apt:
+        pkg:
+        - wget
+        - curl
+        - net-tools
+        - ifupdown2
+        - tree
+        - git
