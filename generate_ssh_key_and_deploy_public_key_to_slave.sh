@@ -40,6 +40,11 @@ fi
 ###############################
 # generate rsa key
 ###############################
+apt install openssh-server -y
+
+###############################
+# generate rsa key
+###############################
 echo "Answer the various questions asked"
 ssh -t rsa
 
