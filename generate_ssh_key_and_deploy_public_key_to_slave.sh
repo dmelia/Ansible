@@ -5,7 +5,7 @@
 # Script by geds3169
 # 16/10/2021
 #
-# generate key ssh and ad some slave servers to the /etc/hosts
+# generate key ssh and ad some slave servers
 #
 # 1 step:
 # 
