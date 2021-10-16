@@ -1,0 +1,12 @@
+---
+- hosts: all # replace for a specifi slave
+  become: true # = sudo
+  become_user: user_name # replace username = sudo -u user_name, if you user root remove become.
+  tasks:
+  
+  # Optional "Transfer the script, if the script is accessible on a public share for example" 
+     - name: Transfer the script
+       copy: src=test.sh dest=/home/test_user mode=0777 # replace username = sudo -u user_name, if you user root remove become.
+       
+     - name: Execute the script bourne shell
+       command: sh /home/user_name/name_script.sh # Replace name of user in the path and the name script.sh
