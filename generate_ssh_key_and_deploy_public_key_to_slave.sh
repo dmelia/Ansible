@@ -24,6 +24,7 @@
 
 echo "This script generate ssh rsa key pair in to the host"
 echo "Answer the various questions asked"
+echo "Utilise ssh-copy-id to deploy the public key to the slaves"
 echo "Based on a node consisting of one host and two slaves"
 echo "This script must be run as root"
 
