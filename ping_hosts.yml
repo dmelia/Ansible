@@ -1,6 +1,6 @@
 ---
  - name: "Get ping response"
-   become: yes # = sudo
+   become: true # = sudo
    become_user: user_name # replace username = sudo -u user_name, if you user root remove become.
    hosts: all
    tasks:
