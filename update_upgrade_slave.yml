@@ -1,7 +1,7 @@
 ---
 - hosts: all
-   become: true # = sudo
-    become_user: user_name # replace username = sudo -u user_name, if you user root remove become.
+  become: true # = sudo
+   become_user: user_name # replace username = sudo -u user_name, if you user root remove become.
    tasks:
      - name: Update packages list
        apt: update_cache=yes
