@@ -14,6 +14,8 @@ However, this method makes it easier to create a "project" folder in a / home / 
 Finally I find it messy, in case we have several Administrators.
 
 I was unable to add the ppa (Ubuntu repository) to Debian.
+
+
   ----------------------------------------------------------------------------------------------
   
 Installing Ansible 2.6 on Ubuntu Bionic Beaver
