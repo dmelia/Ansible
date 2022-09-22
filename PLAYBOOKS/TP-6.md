@@ -110,6 +110,7 @@ Création du fichier docker.yml
         state: started
         enabled: yes
 
+    - name: "Create groupe"
       group:
         name: docker
         state: present
