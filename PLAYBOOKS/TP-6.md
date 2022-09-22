@@ -122,11 +122,12 @@ Création du fichier docker.yml
         groups: docker
         append: yes
 
-    - name: Add rule firewalld
-      firewalld:
-        port: 8600/tcp
-        permanent: yes
-        state: enabled
+# La gestion de firewalld nécessite la version de python2 et semble poser un problème lors de la transformation du playbook en rôle (Ansible se chargera d'ouvrir les ports de firewalld)
+#    - name: Add rule firewalld
+#      firewalld:
+#        port: 8600/tcp
+#        permanent: yes
+#        state: enabled
 ```
 
 Création du fichier mario.yml
