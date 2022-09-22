@@ -1,0 +1,9 @@
+---
+# hosts.yaml
+
+all:
+  children:
+    prod:
+      hosts:
+        client1:
+        client2:
