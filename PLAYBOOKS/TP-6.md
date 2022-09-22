@@ -4,7 +4,7 @@ Guilhem TP-6
 
 1 master (Ansible)
 
-2 clietn (1et 2 )
+2 client (1et 2 )
 
 **<u>Consigne:</u>**
 
