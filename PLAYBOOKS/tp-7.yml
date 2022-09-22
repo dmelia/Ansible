@@ -1,0 +1,72 @@
+---
+
+# Deploys the LEMP Stack nginx:1.23 /mariadb:jammy container with a volume. Forwards native port 80 to 8081 and exposes it, replaces the index.html / for a php server use image https://hub.docker.com/_/php
+
+-name: "Deploying LEMP Stack containers with attached volumes"
+ hosts: prod
+ becomme: yes
+ vars:
+   # Because Ansible use python
+   ansible_python_interpreter=/usr/bin/python3
+  tasks:
+
+    - name: Creating volume for data Nginx container 
+      volume:
+        name: /data/web
+                
+        - name: Create a nginx container
+      docker_container:
+        name: nginx
+        image: nginx:1.23
+                network_mode: bridge
+                port: "8081:80"
+                published_ports: "0.0.0.0:8081"                
+        volumes:
+          - /data/web:/usr/share/nginx/html:rw
+                state: absent
+        enabled: yes
+                
+  - name: Replaces the home page of the site
+    copy:
+      src: /templates/index.html.j2
+      dest: /usr/share/nginx/html/index.html
+      follow: no
+
+  - name: Autorize http traffic
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+
+    - name: Creating volume for data Mariadb container 
+      volume:
+        name: /data/mariadb
+                
+        - name: Create a Mariadb container
+      docker_container:
+        name: maridb
+        image: mariadb:jammy
+                network_mode: bridge
+                port: "3306:3306"
+                #published_ports: "0.0.0.0:3306"                
+        volumes:
+          - /data/web:/var/lib/mysql:rw
+                state: started
+        enabled: yes
+        
+    - name : Clone du repo
+      hosts: all
+      become: yes
+
+    - name: Install git and Clone template web from a github repository 
+      yum:
+        name: git
+        state: present
+            
+   
+    - name: Clone web template to local host volume
+      git:
+        repo: https://github.com/geds3169/templates.git
+        dest: /data/web
+        clone: yes
+        update: yes
