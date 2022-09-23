@@ -8,7 +8,7 @@
 
     - Emmanuel GIRIN                - Madj EL KHATIB
 
-    - Magatte DIOP                    - Guilhem SCHLOSSER    
+    - Magatte DIOP                    - Guilhem SCHLOSSER      
 
 ### <u>Instruction du TP</u>  
 
